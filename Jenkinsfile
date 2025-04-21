@@ -1,17 +1,17 @@
 pipeline {
     agent any
     tools {
-        gradle 'Gradle-8.6'  // Name of Gradle tool configured in Jenkins
-        jdk 'OpenJDK-11'  // Name of JDK tool configured in Jenkins
+        gradle 'Gradle-8.6'     // Match this with what you've set up in Jenkins Global Tools
+        jdk 'OpenJDK-11'
     }
     environment {
         ARTIFACTORY_URL = "http://localhost:8081/artifactory/libs-release-local"
-        ARTIFACTORY_CREDENTIALS = "admin:password"  // Update as needed
+        ARTIFACTORY_CREDENTIALS = "admin:password"
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'develop', url: 'https://github.com/your-repo/microservices.git'
+                git branch: 'main', url: 'https://github.com/Lily0820/Jenkins-pipeline.git'
             }
         }
         stage('Build') {
