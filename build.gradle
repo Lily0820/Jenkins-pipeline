@@ -1,0 +1,17 @@
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = "Artifactory"
+            url = uri("http://localhost:8081/artifactory/libs-release-local")
+            credentials {
+                username = 'admin'
+                password = 'password'
+            }
+        }
+    }
+}
