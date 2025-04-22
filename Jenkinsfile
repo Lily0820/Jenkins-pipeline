@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         gradle 'Gradle-8.6'     // Match this with what you've set up in Jenkins Global Tools
-        jdk 'OpenJDK-11'
+        jdk 'jdk17'
     }
     environment {
         ARTIFACTORY_URL = "http://localhost:8081/artifactory/libs-release-local"
